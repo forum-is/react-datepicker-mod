@@ -7185,7 +7185,7 @@ var DatePicker = _wrapComponent('DatePicker')((_temp = _class = function (_React
             newSelection = addYears(copy, 1);
             break;
         }
-        if (_this.props.adjustDateOnChange) {
+        if (_this.props.adjustDateOnChange && newSelection) {
           _this.setSelected(newSelection);
         }
         _this.setPreSelection(newSelection);

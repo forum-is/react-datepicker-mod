@@ -389,7 +389,7 @@ export default class DatePicker extends React.Component {
           newSelection = addYears(copy, 1)
           break
       }
-      if (this.props.adjustDateOnChange) {
+      if (this.props.adjustDateOnChange && newSelection) {
         this.setSelected(newSelection)
       }
       this.setPreSelection(newSelection)
