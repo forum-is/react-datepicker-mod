@@ -71,6 +71,7 @@ export default class DatePicker extends React.Component {
     includeDates: PropTypes.array,
     inline: PropTypes.bool,
     isClearable: PropTypes.bool,
+    keepInput: PropTypes.bool,
     locale: PropTypes.string,
     maxDate: PropTypes.object,
     minDate: PropTypes.object,
@@ -131,6 +132,7 @@ export default class DatePicker extends React.Component {
       disabled: false,
       disabledKeyboardNavigation: false,
       dropdownMode: 'scroll',
+      keepInput: true,
       onFocus () {},
       onBlur () {},
       onKeyDown () {},
@@ -249,7 +251,7 @@ export default class DatePicker extends React.Component {
     this.setState({ inputValue: event.target.value })
     const date = parseDate(event.target.value, this.props)
     if (date || !event.target.value) {
-      this.setSelected(date, event, true)
+      this.setSelected(date, event, this.props.keepInput)
     }
   }
 

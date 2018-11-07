@@ -6939,6 +6939,7 @@ var DatePicker = _wrapComponent('DatePicker')((_temp = _class = function (_React
         disabled: false,
         disabledKeyboardNavigation: false,
         dropdownMode: 'scroll',
+        keepInput: true,
         onFocus: function onFocus() {},
         onBlur: function onBlur() {},
         onKeyDown: function onKeyDown() {},
@@ -7045,7 +7046,7 @@ var DatePicker = _wrapComponent('DatePicker')((_temp = _class = function (_React
       _this.setState({ inputValue: event.target.value });
       var date = parseDate(event.target.value, _this.props);
       if (date || !event.target.value) {
-        _this.setSelected(date, event, true);
+        _this.setSelected(date, event, _this.props.keepInput);
       }
     };
 
@@ -7384,6 +7385,7 @@ var DatePicker = _wrapComponent('DatePicker')((_temp = _class = function (_React
   includeDates: PropTypes.array,
   inline: PropTypes.bool,
   isClearable: PropTypes.bool,
+  keepInput: PropTypes.bool,
   locale: PropTypes.string,
   maxDate: PropTypes.object,
   minDate: PropTypes.object,
